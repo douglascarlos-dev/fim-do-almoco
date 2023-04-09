@@ -1,0 +1,67 @@
+
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calcule o seu horário de almoço</title>
+  <meta name="description" content="Calcule o seu horário de almoço">
+  <meta property="og:title" content="Calcule o seu horário de almoço"/>
+  <meta property="og:description" content="Calcule o seu horário de almoço"/>
+  <link rel="stylesheet" href="bootstrap.min.css" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="mx-auto col-md-8 order-md-1">
+    <img src="despertador.png" alt="Girl in a jacket" width="100" height="100">
+    <form name="yourform">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label"><b>Início do almoço</b></label><br>
+          <input type="time" class="form-check-label" id="exampleInputEmail1" aria-describedby="emailHelp" min="09:00" max="18:00" required onClick="limpar()">
+          <div id="emailHelp" class="form-text">Coloque o horário que você bateu o seu ponto para ir almoçar.</div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Tempo de almoço</label><br>
+          <input type="radio" class="form-check-label" id="tempo1" name="tempo" value="30" onClick="onClick(30)">
+          <label for="html">30 min.</label><br>
+          <input type="radio" class="form-check-label" id="tempo2" name="tempo" value="45" onClick="onClick(45)">
+          <label for="css">45 min.</label><br>
+          <input type="radio" class="form-check-label" id="tempo3" name="tempo" value="60" onClick="onClick(60)">
+          <label for="css">60 min.</label><br>
+        </div>
+        <div class="mb-3">
+        <label for="exampleInputEmail2" class="form-label"><b>Fim do almoço</b></label><br>
+        <input type="time" class="form-check-label" id="text1" name="text1" aria-describedby="emailHelp">
+        </div>
+      </form>
+      <footer class="pt-4 my-md-5 pt-md-5 border-top">
+        <div class="row">
+          <div class="col-12 col-md">
+            <small class="d-block mb-3 text-muted text-center">© 2023 - Uberaba.MG - Projetado e construído por <a href="https://github.com/douglascarlos-dev" target="_blank">Douglas Carlos</a>.</small>
+          </div>
+        </div>
+      </footer>
+    </div>
+<script type="text/javascript" src="jquery-3.5.1.slim.min.js"></script>
+<script src="bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+<script src="https://momentjs.com/downloads/moment-with-locales.js"></script>
+<script type="text/javascript">
+
+function onClick(tempo_de_almoco) {
+    const inicio_almoco = document.getElementById('exampleInputEmail1').value;
+    var inicio = new Date();
+    var fim = new Date();
+    inicio = inicio_almoco;
+    fim = moment.utc(inicio,'hh:mm').add(tempo_de_almoco,'minutes').format('hh:mm');
+    document.forms['yourform']['text1'].value = fim;
+}
+function limpar() {
+    document.forms['yourform']['text1'].value = "";
+    $("#tempo1").prop("checked", false);
+    $("#tempo2").prop("checked", false);
+    $("#tempo3").prop("checked", false);
+}
+</script>
+</body>
+</html>
