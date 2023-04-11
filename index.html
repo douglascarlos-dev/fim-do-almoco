@@ -10,10 +10,35 @@
   <meta property="og:title" content="Calcule o seu horário de almoço"/>
   <meta property="og:description" content="Calcule o seu horário de almoço"/>
   <link rel="stylesheet" href="css/bootstrap.min.css" crossorigin="anonymous">
+  <style>
+    /*!
+  * Dark Mode Switch v1.0.1 (https://github.com/coliff/dark-mode-switch)
+  * Copyright 2021 C.Oliff
+  * Licensed under MIT (https://github.com/coliff/dark-mode-switch/blob/main/LICENSE)
+  */
+  [data-theme="dark"] {
+    background-color: #111 !important;
+    color: #eee;
+  }
+  [data-theme="dark"] .form-text {
+      margin-top: 0.25rem;
+      font-size: .875em;
+      color: rgb(255 255 255 / 75%);
+  }
+  [data-theme="dark"] .text-muted {
+      --bs-text-opacity: 1;
+      color: rgb(255 255 255 / 75%)!important;
+  }
+  </style>
 </head>
 
 <body>
+
     <div class="container mx-auto col-md-8 order-md-1">
+      <div class="form-check form-switch">
+        <input type="checkbox" class="form-check-input" id="darkSwitch" />
+        <label class="custom-control-label" for="darkSwitch">Dark Mode</label>
+      </div>
     <img src="img/despertador.png" alt="Girl in a jacket" width="100" height="100">
     <form name="yourform">
         <div class="mb-3">
@@ -63,5 +88,6 @@ function limpar() {
     $("#tempo3").prop("checked", false);
 }
 </script>
+<script src="js/dark-mode-switch.min.js"></script>
 </body>
 </html>
