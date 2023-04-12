@@ -81,7 +81,7 @@ function onClick(tempo_de_almoco) {
     var inicio = new Date();
     var fim = new Date();
     inicio = inicio_almoco;
-    fim = moment.utc(inicio,'hh:mm').add(tempo_de_almoco,'minutes').format('hh:mm');
+    fim = moment.utc(inicio,'HH:mm').add(tempo_de_almoco,'minutes').format('HH:mm');
     document.forms['yourform']['text1'].value = fim;
 }
 function limpar() {
