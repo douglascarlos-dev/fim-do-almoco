@@ -45,22 +45,22 @@
     <img src="img/despertador.png" alt="Girl in a jacket" width="100" height="100">
     <form name="yourform">
         <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label"><b>Início do almoço</b></label><br>
-          <input type="time" class="form-check-label" id="exampleInputEmail1" aria-describedby="emailHelp" min="09:00" max="18:00" required onClick="limpar()">
-          <div id="emailHelp" class="form-text">Coloque o horário que você bateu o seu ponto para ir almoçar.</div>
+          <label for="InputTime" class="form-label"><b>Início do almoço</b></label><br>
+          <input type="time" class="form-check-label" id="InputTime" aria-describedby="Time" min="09:00" max="18:00" required onClick="clean()">
+          <div id="time" class="form-text">Coloque o horário que você bateu o seu ponto para ir almoçar.</div>
         </div>
         <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">Tempo de almoço</label><br>
-          <input type="radio" class="form-check-label" id="tempo1" name="tempo" value="30" onClick="onClick(30)">
+          <label for="InputBreak" class="form-label">Tempo de almoço</label><br>
+          <input type="radio" class="form-check-label" id="break1" name="break" value="30" onClick="onClick(30)">
           <label for="html">30 min.</label><br>
-          <input type="radio" class="form-check-label" id="tempo2" name="tempo" value="45" onClick="onClick(45)">
+          <input type="radio" class="form-check-label" id="break2" name="break" value="45" onClick="onClick(45)">
           <label for="css">45 min.</label><br>
-          <input type="radio" class="form-check-label" id="tempo3" name="tempo" value="60" onClick="onClick(60)">
+          <input type="radio" class="form-check-label" id="break3" name="break" value="60" onClick="onClick(60)">
           <label for="css">60 min.</label><br>
         </div>
         <div class="mb-3">
-        <label for="exampleInputEmail2" class="form-label"><b>Fim do almoço</b></label><br>
-        <input type="time" class="form-check-label" id="text1" name="text1" aria-describedby="emailHelp">
+        <label for="InputTime2" class="form-label"><b>Fim do almoço</b></label><br>
+        <input type="time" class="form-check-label" id="InputTime2" name="InputTime2" aria-describedby="emailHelp">
         </div>
       </form>
       <footer class="pt-4 my-md-5 pt-md-5 border-top">
@@ -77,18 +77,18 @@
 <script type="text/javascript">
 
 function onClick(tempo_de_almoco) {
-    const inicio_almoco = document.getElementById('exampleInputEmail1').value;
+    const inicio_almoco = document.getElementById('InputTime').value;
     var inicio = new Date();
     var fim = new Date();
     inicio = inicio_almoco;
     fim = moment.utc(inicio,'HH:mm').add(tempo_de_almoco,'minutes').format('HH:mm');
-    document.forms['yourform']['text1'].value = fim;
+    document.forms['yourform']['InputTime2'].value = fim;
 }
-function limpar() {
+function clean() {
     document.forms['yourform']['text1'].value = "";
-    $("#tempo1").prop("checked", false);
-    $("#tempo2").prop("checked", false);
-    $("#tempo3").prop("checked", false);
+    $("#break1").prop("checked", false);
+    $("#break2").prop("checked", false);
+    $("#break3").prop("checked", false);
 }
 </script>
 <script src="js/dark-mode-switch.min.js"></script>
