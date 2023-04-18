@@ -4,8 +4,6 @@
 
 Aplicativo Web para calcular o horário de almoço. No seu desenvolvimento foi utilizado HTML, CSS, JavaScript, jQuery, Bootstrap, Dark Mode e Figma.
 
-![Screenshot](./img/screenshot.png)
-
 ## Recursos usados no desenvolvimento:
 
 - HTML;
@@ -28,4 +26,6 @@ $ git clone https://github.com/douglascarlos-dev/fim-do-almoco
 
 ## Figma
 
-- [Visualize no Figma](https://www.figma.com/proto/ZtXo9e7U70WCEFY6OoR2qK/Fim-do-Almo%C3%A7o?page-id=0%3A1&node-id=2-2&viewport=35%2C349%2C0.75&scaling=scale-down&starting-point-node-id=2%3A2)
+- [Visualize animação no Figma](https://www.figma.com/proto/ZtXo9e7U70WCEFY6OoR2qK/Fim-do-Almo%C3%A7o?page-id=0%3A1&node-id=2-2&viewport=35%2C349%2C0.75&scaling=scale-down&starting-point-node-id=2%3A2)
+
+![Screenshot](./img/figma.png)
