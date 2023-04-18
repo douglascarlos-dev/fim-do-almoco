@@ -8,7 +8,7 @@ Aplicativo Web para calcular o horário de almoço. No seu desenvolvimento foi u
 
 - HTML;
 - CSS;
-- JavaScript.
+- JavaScript;
 - [Bootstrap](https://github.com/twbs/bootstrap) v5.3.0;
 - [jQuery](https://github.com/jquery/jquery) v.3.5.1;
 - [Moment.js](https://momentjs.com/) v2.29.4;
@@ -16,6 +16,7 @@ Aplicativo Web para calcular o horário de almoço. No seu desenvolvimento foi u
 - [Apache HTTP Server](https://github.com/apache/httpd);
 - [Git](https://git-scm.com);
 - [Visual Studio Code](https://github.com/Microsoft/vscode/);
+- Figma;
 
 ## Obtendo uma cópia:
 
