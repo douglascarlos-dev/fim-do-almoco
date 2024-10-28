@@ -1,11 +1,10 @@
-
 <!doctype html>
 <html lang="pt-br">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Calcule o seu horário de almoço</title>
+  <title>Fim do Almoço</title>
   <meta name="description" content="Calcule o seu horário de almoço">
   <meta name="author" content="Douglas Carlos">
   <meta property="og:title" content="Calcule o seu horário de almoço"/>
@@ -41,16 +40,18 @@
 <body>
 
     <div class="container mx-auto col-md-8 order-md-1">
+      <br>
+      <h2>Fim do Almoço</h2>
       <div class="form-check form-switch">
         <input type="checkbox" class="form-check-input" id="darkSwitch" />
         <label class="custom-control-label" for="darkSwitch">Dark Mode</label>
       </div>
-    <img src="img/despertador.png" alt="Ícone App Fim do Almoço" width="100" height="100">
+    <img src="img/despertador.png" id="despertador" alt="Ícone App Fim do Almoço" width="100" height="100">
     <form name="yourform">
         <div class="mb-3">
           <label for="InputTime" class="form-label"><b>Início do almoço</b></label><br>
           <input type="time" class="form-check-label" id="InputTime" aria-describedby="Time" min="09:00" max="18:00" required onClick="clean()">
-          <div id="time" class="form-text">Coloque o horário que você bateu o seu ponto para ir almoçar.</div>
+          <div id="time"><p>Coloque o horário que você bateu o seu ponto para ir almoçar.</p></div>
         </div>
         <div class="mb-3">
           <label for="InputBreak" class="form-label">Tempo de almoço</label><br>
@@ -66,11 +67,12 @@
         <input type="time" class="form-check-label" id="InputTime2" name="InputTime2" aria-describedby="emailHelp">
         </div>
       </form>
+      <p>O site "Fim do Almoço" permite calcular o horário de término do almoço. O usuário insere o horário de início do intervalo e seleciona a duração (30, 45 ou 60 minutos), e o site exibe a hora de retorno ao trabalho. É simples e prático para gerenciar pausas de almoço.</p>
       <footer class="pt-3 my-md-2">
         <div class="row">
           <div class="col-12 col-md">
             <small class="d-block mb-3 text-muted text-center">© 2024  - GitHub<br><a href="https://douglascarlos.dev" target="_blank"><img src="./img/logo.svg" alt="Ícone Douglas Carlos" style="height:35px;"></a>
-              &nbsp;<a href="https://github.com/douglascarlos-dev/fim-do-almoco" target="_blank"><img src="./img/github-mark-white.svg" alt="Ícone GitHub" style="height:35px;"></a></small>
+              &nbsp;<a href="https://github.com/douglascarlos-dev/fim-do-almoco" target="_blank"><img id="minhaImagem" class="minha-imagem" src="./img/github-mark-black.svg" alt="Ícone GitHub" style="height:35px;"></a></small>
           </div>
         </div>
       </footer>
