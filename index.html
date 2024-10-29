@@ -34,6 +34,10 @@
       --bs-text-opacity: 1;
       color: rgb(255 255 255 / 75%)!important;
   }
+  .slider-width
+{
+    width: 300px;
+}
   </style>
 </head>
 
@@ -61,6 +65,19 @@
           <label for="css">45 min.</label><br>
           <input type="radio" class="form-check-label" id="break3" name="break" value="60" onClick="onClick(60)">
           <label for="css">60 min.</label><br>
+          <div>
+            <input type="range" class="slider-width" id="time_input" name="tempo" min="0" max="120" value="0" step="5" list="markers" />
+            <label for="volume"><output id="value"></output> min.</label>
+            <datalist id="markers">
+              <option value="0"></option>
+              <option value="15"></option>
+              <option value="30"></option>
+              <option value="45"></option>
+              <option value="60"></option>
+              <option value="90"></option>
+              <option value="120"></option>
+            </datalist>
+          </div>
         </div>
         <div class="mb-3">
         <label for="InputTime2" class="form-label"><b>Fim do almoço</b></label><br>
@@ -88,6 +105,7 @@ function onClick(tempo_de_almoco) {
     var fim = new Date();
     inicio = inicio_almoco;
     fim = moment.utc(inicio,'HH:mm').add(tempo_de_almoco,'minutes').format('HH:mm');
+    $('#time_input').val(tempo_de_almoco);
     document.forms['yourform']['InputTime2'].value = fim;
 }
 function clean() {
@@ -96,6 +114,28 @@ function clean() {
     $("#break2").prop("checked", false);
     $("#break3").prop("checked", false);
 }
+
+const value = document.querySelector("#value");
+const input = document.querySelector("#time_input");
+value.textContent = input.value;
+input.addEventListener("input", (event) => {
+  clean();
+  value.textContent = event.target.value;
+});
+
+$(document).ready(function() {
+    $('#time_input').on('input', function() {
+        var valorRange = $(this).val();
+
+        const inicio_almoco = document.getElementById('InputTime').value;
+        var inicio = new Date();
+        var fim = new Date();
+        inicio = inicio_almoco;
+        fim = moment.utc(inicio,'HH:mm').add(valorRange,'minutes').format('HH:mm');
+
+        document.forms['yourform']['InputTime2'].value = fim;
+    });
+});
 </script>
 <script src="js/dark-mode-switch.min.js"></script>
 </body>
