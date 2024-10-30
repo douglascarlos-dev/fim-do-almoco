@@ -16,6 +16,9 @@
   <link rel="shortcut icon" href="img/despertador.ico">
   <link rel="icon" type="image/png" href="img/512x512.png">
   <style>
+    .container {
+      padding: 0 20px;
+    }
     /*!
   * Dark Mode Switch v1.0.1 (https://github.com/coliff/dark-mode-switch)
   * Copyright 2021 C.Oliff
@@ -38,6 +41,7 @@
 {
     width: 300px;
 }
+
   </style>
 </head>
 
@@ -57,14 +61,14 @@
           <input type="time" class="form-check-label" id="InputTime" aria-describedby="Time" min="09:00" max="18:00" required onClick="clean()">
           <div id="time"><p>Coloque o horário que você bateu o seu ponto para ir almoçar.</p></div>
         </div>
-        <div class="mb-3">
+        <div class="mb-3 tempo">
           <label for="InputBreak" class="form-label">Tempo de almoço</label><br>
           <input type="radio" class="form-check-label" id="break1" name="break" value="30" onClick="onClick(30)">
-          <label for="html">30 min.</label><br>
+          <label for="html">30 min.</label>
           <input type="radio" class="form-check-label" id="break2" name="break" value="45" onClick="onClick(45)">
-          <label for="css">45 min.</label><br>
+          <label for="css">45 min.</label>
           <input type="radio" class="form-check-label" id="break3" name="break" value="60" onClick="onClick(60)">
-          <label for="css">60 min.</label><br>
+          <label for="css">60 min.</label><br><br>
           <div>
             <input type="range" class="slider-width" id="time_input" name="tempo" min="0" max="120" value="0" step="5" list="markers" />
             <label for="volume"><output id="value"></output> min.</label>
@@ -78,7 +82,7 @@
               <option value="120"></option>
             </datalist>
           </div>
-        </div>
+        </div><br>
         <div class="mb-3">
         <label for="InputTime2" class="form-label"><b>Fim do almoço</b></label><br>
         <input type="time" class="form-check-label" id="InputTime2" name="InputTime2" aria-describedby="emailHelp">
