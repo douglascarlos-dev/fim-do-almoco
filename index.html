@@ -38,10 +38,10 @@
       color: rgb(255 255 255 / 75%)!important;
   }
   .slider-width
-{
-    width: 300px;
-}
-
+  {
+      width: 300px;
+      accent-color: #0d6efd;
+  }
   </style>
 </head>
 
@@ -58,7 +58,7 @@
     <form name="yourform">
         <div class="mb-3">
           <label for="InputTime" class="form-label"><b>Início do almoço</b></label><br>
-          <input type="time" class="form-check-label" id="InputTime" aria-describedby="Time" min="09:00" max="18:00" required onClick="clean()" value="00:00">
+          <input type="time" class="form-check-label" id="InputTime" aria-describedby="Time" min="09:00" max="18:00" required onClick="clean()">
           <div id="time"><p>Coloque o horário que você bateu o seu ponto para ir almoçar.</p></div>
         </div>
         <div class="mb-3 tempo">
@@ -140,6 +140,8 @@ $(document).ready(function() {
         document.forms['yourform']['InputTime2'].value = fim;
     });
 });
+
+document.forms['yourform']['InputTime'].value = moment().format('HH:mm');
 </script>
 <script src="js/dark-mode-switch.min.js"></script>
 </body>
