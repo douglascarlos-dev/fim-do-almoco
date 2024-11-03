@@ -111,20 +111,35 @@ function onClick(tempo_de_almoco) {
     fim = moment.utc(inicio,'HH:mm').add(tempo_de_almoco,'minutes').format('HH:mm');
     $('#time_input').val(tempo_de_almoco);
     document.forms['yourform']['InputTime2'].value = fim;
+    value.textContent = tempo_de_almoco;
 }
 function clean() {
+  $('#time_input').val(0);
+  clean2();
+}
+
+function clean2() {
     document.forms['yourform']['InputTime2'].value = "";
     $("#break1").prop("checked", false);
     $("#break2").prop("checked", false);
     $("#break3").prop("checked", false);
+    value.textContent = 0;
 }
 
 const value = document.querySelector("#value");
 const input = document.querySelector("#time_input");
 value.textContent = input.value;
 input.addEventListener("input", (event) => {
-  clean();
+  clean2();
   value.textContent = event.target.value;
+  if (event.target.value == 30) {
+    $("#break1").prop("checked", true);
+  } else if (event.target.value == 45) {
+    $("#break2").prop("checked", true);
+  } else if (event.target.value == 60) {
+    $("#break3").prop("checked", true);
+  }
+
 });
 
 $(document).ready(function() {
@@ -142,6 +157,8 @@ $(document).ready(function() {
 });
 
 document.forms['yourform']['InputTime'].value = moment().format('HH:mm');
+
+console.log('Gostou do projeto? Deixe uma estrelinha no GitHub para me ajudar a crescer! ⭐ https://github.com/douglascarlos-dev/fim-do-almoco');
 </script>
 <script src="js/dark-mode-switch.min.js"></script>
 </body>
